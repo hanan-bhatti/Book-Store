@@ -473,14 +473,18 @@
         text-align: center;
         gap: 20px;
       }
-      #qoute {
+      .socials {
         background-color: #e5e9b2;
         color: #333333;
         border-radius: 10px;
-        padding: 8px;
-        width: 1200px;
-        text-align: center;
+        width: 430px;
+        height: 325px;
         gap: 20px;
+
+      }
+      .socials:hover {
+        outline: #62c2fe solid 2px;
+        transition: 0.5s ease;
       }
     </style>
   </head>
@@ -857,13 +861,12 @@
       </div>
       <div style="display: flex; justify-content: start; margin: auto">
         <div style="text-align: start">
-          <p id="quote">
-            <i
-              >"A reader lives a thousand lives before he dies. The man who
-              never reads lives only one."</i
-            >
+          <p style="background-color: #e5e9b2; color: #333333; border-radius: 10px; padding: 8px; width: 1200px; text-align: center; gap: 20px">
+            <i>"A reader lives a thousand lives before he dies. The man who
+              never reads lives only one."</i>
             <br />
             <b>— George R.R. Martin</b>
+          </p>
             <p id="team">
               <br>
               <b>👤 Meet Our Team</b>
@@ -882,9 +885,8 @@ A tech enthusiast and entrepreneur with a deep love for books. Abdul Hanan Bhatt
 <br>
 📚 Join us on this journey and let's celebrate the joy of reading together!
             </p>
-          </p>
         </div>
-        <div style="margin: auto">
+        <div style="margin: auto" class="socials">
           <div
             style="
               display: flex;
@@ -897,7 +899,7 @@ A tech enthusiast and entrepreneur with a deep love for books. Abdul Hanan Bhatt
           >
             <h3>Follow us on</h3>
           </div>
-          <div class="card">
+          <div class="card" style="margin: auto">
             <div class="background"></div>
             <div class="logo">Socials</div>
 
