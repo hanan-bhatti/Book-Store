@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Login</title>
     <style>
       body {
-        font-family: 'Montserrat', sans-serif;
+        background-color: #e5e9b2;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 5px;
       }
@@ -31,7 +32,7 @@
 
       .nav {
         display: flex;
-        gap: 15px;
+        gap: 20px;
       }
 
       .nav a {
@@ -43,9 +44,13 @@
 
       .nav a:hover {
         background-color: #008080;
+        border-bottom: 2px solid #080e0e;
+        transform: scale3d(1.1, 1.1, 1);
+        transition: 0.5s ease;
+        cursor: pointer;
       }
 
-      .input {
+      .search {
         max-width: 190px;
         padding: 0.5rem;
         min-height: 40px;
@@ -55,8 +60,151 @@
         box-shadow: 0px 10px 20px -18px;
       }
 
-      .input:focus {
+      .search:focus {
         border-bottom: 2px solid #008080;
+      }
+      .search:hover {
+        outline: 2px solid white;
+        transition: 0.5s ease;
+        cursor: text;
+      }
+      .login {
+        background-color: #33333350;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .login:hover {
+        filter: drop-shadow(0px 0px 10px #008080);
+        transition: 0.5s;
+      }
+
+      .heading2 {
+        background-color: #008080;
+        display: inline-block;
+        padding: 10px 20px;
+        width: 100px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .login a {
+        color: #008080;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .login a:hover {
+        text-decoration: underline;
+        background-color: bisque;
+        border-radius: 3px;
+      }
+
+      .login-form {
+        position: relative;
+        width: 300px;
+        display: flex;
+      }
+
+      .login-form input {
+        border: none;
+        box-shadow: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid #00d9ff;
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 5px;
+      }
+
+      .login-form input:focus {
+        background: #00d9ff;
+        color: black;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .login-form label {
+        position: absolute;
+        left: 0;
+        padding: 20px 10px 10px;
+        font-size: 1em;
+        color: black;
+        letter-spacing: 00.05em;
+        transition: 0.5s;
+        pointer-events: none;
+      }
+
+      .login-form input:focus + label,
+      .login-form input:valid + label {
+        top: 5px;
+        font-size: 15px;
+        transform: translateX(-10px) translateY(-42px);
+        color: black;
+      }
+      button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: #008080;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:after {
+        content: " ";
+        width: 0%;
+        height: 100%;
+        background: #ffd401;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+        right: 0;
+      }
+
+      button:hover::after {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
+
+      button span {
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        padding: 18px 25px;
+        color: #fff;
+        font-size: 1.125em;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        z-index: 20;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:hover span {
+        color: #183153;
+        animation: scaleUp 0.3s ease-in-out;
+      }
+
+      @keyframes scaleUp {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.95);
+        }
+
+        100% {
+          transform: scale(1);
+        }
       }
     </style>
   </head>
@@ -71,9 +219,29 @@
           <a href="registration.html">Sign up</a>
           <a href="login.html">Login</a>
         </nav>
-        <input class="input" placeholder="Search..." type="search" />
+        <input class="search" placeholder="Search..." type="search" />
       </div>
     </div>
-    
+
+    <div class="login">
+      <h1 class="heading2">Login</h1>
+      <div
+        class="login-form"
+        style="margin: auto; padding-bottom: 20px; padding-top: 20px"
+      >
+        <input type="text" required />
+        <label for="username">Username / Email</label>
+      </div>
+      <div class="login-form" style="margin: auto">
+        <input type="password" required />
+        <label for="password">Password</label>
+      </div>
+      <div style="padding-top: 20px;">
+        <button style="margin: auto;">
+          <span style="font-size: large;">Login</span>
+        </button>
+      </div>
+      <p>Don't have an account? <a href="registration.html">Sign up</a></p>
+    </div>
   </body>
 </html>

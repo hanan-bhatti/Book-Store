@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Profile</title>
     <style>
       body {
+        background-color: #e5e9b2;
         font-family: 'Montserrat', sans-serif;
         margin: 0;
         padding: 5px;
@@ -31,7 +32,7 @@
 
       .nav {
         display: flex;
-        gap: 15px;
+        gap: 20px;
       }
 
       .nav a {
@@ -43,9 +44,13 @@
 
       .nav a:hover {
         background-color: #008080;
+        border-bottom: 2px solid #080e0e;
+        transform: scale3d(1.1, 1.1, 1);
+        transition: 0.5s ease;
+        cursor: pointer;
       }
 
-      .input {
+      .search {
         max-width: 190px;
         padding: 0.5rem;
         min-height: 40px;
@@ -55,8 +60,13 @@
         box-shadow: 0px 10px 20px -18px;
       }
 
-      .input:focus {
+      .search:focus {
         border-bottom: 2px solid #008080;
+      }
+      .search:hover {
+        outline: 2px solid white;
+        transition: 0.5s ease;
+        cursor: text;
       }
     </style>
   </head>
@@ -71,7 +81,7 @@
           <a href="registration.html">Sign up</a>
           <a href="login.html">Login</a>
         </nav>
-        <input class="input" placeholder="Search..." type="search" />
+        <input class="search" placeholder="Search..." type="search" />
       </div>
     </div>
   </body>
