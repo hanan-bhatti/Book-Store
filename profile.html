@@ -7,7 +7,7 @@
     <style>
       body {
         background-color: #e5e9b2;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 5px;
       }
@@ -68,6 +68,88 @@
         transition: 0.5s ease;
         cursor: text;
       }
+      .profile-card {
+        background: linear-gradient(135deg, #81e384, #2e7d32);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        width: 350px;
+        margin: 50px auto;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .profile-card:hover {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        transform: perspective(1000px) rotateY(-15deg) translateZ(20px);
+        transition: 1s ease;
+      }
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        margin-bottom: 15px;
+      }
+
+      button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: #008080;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:after {
+        content: " ";
+        width: 0%;
+        height: 100%;
+        background: #ffd401;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+        right: 0;
+      }
+
+      button:hover::after {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
+
+      button span {
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        padding: 18px 25px;
+        color: white;
+        font-size: 1.125em;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        z-index: 20;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:hover span {
+        color: #183153;
+        animation: scaleUp 0.3s ease-in-out;
+      }
+      .phone a {
+        text-decoration: none;
+        color: turquoise;
+      } 
+      .phone a:hover {
+        text-decoration: underline;
+        background-color: bisque;
+        color: black;
+        border-radius: 3px;
+      }
+
     </style>
   </head>
   <body>
@@ -83,6 +165,16 @@
         </nav>
         <input class="search" placeholder="Search..." type="search" />
       </div>
+    </div>
+    <div class="profile-card">
+      <img src="boy.png" alt="Profile Picture" class="profile-pic" />
+      <h2>Abdul Hannan Bhatti</h2>
+      <p><strong>Username:</strong> hananhbhatti</p>
+      <p><strong>Email:</strong> hananbhatti2006@gmail.com</p>
+      <p class="phone">
+        <strong>Phone:</strong> <a href="tel:+923422997942">+92 342 2997942</a>
+      </p>
+      <button style="margin: auto;"><span>Edit Profile</span></button>
     </div>
   </body>
 </html>
